@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nederlands Turks Oefenen – Woordenschat Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Nederlands Turks Oefenen</h1>
+	<nav>
+		<ul class="menu">
+			<li><button onclick="toggleSection('nieuwe-woorden')">Nieuwe
+					Woorden Leren</button></li>
+			<li><button onclick="toggleSection('quiz')">Quiz</button></li>
+			<li><button onclick="toggleSection('tegenstellingen')">Tegenstellingen</button></li>
+			<li><button onclick="toggleSection('synoniemen')">Synoniemen</button></li>
+		</ul>
+	</nav>
+
+	<main>
+	
+		<section id="nieuwe-woorden" style="display: none;">
+  <p>Nieuwe woorden leren komt hier...</p>
+  <div id="flashcard-container"></div>
+  <button id="next-word" style="margin-top: 15px;">Volgende Woord</button>
+</section>
+		
+
+		<section id="quiz" style="display: none;">
+			<p id="question">Woordje komt hier…</p>
+			<div id="choices"></div>
+			<p id="score">Score: 0 / 0</p>
+		</section>
+
+		<section id="tegenstellingen" style="display: none;">
+			<h2>Tegenstellingen</h2>
+			<div class="flashcard-container"></div>
+			<button id="next-woorden" style="margin-top: 15px;">Volgende
+				Woorden</button>
+		</section>
+
+		<section id="synoniemen" style="display: none;">
+			<h2>Synoniemen</h2>
+			<div id="synoniem-container" class="synoniem-card-wrapper"></div>
+			<button id="next-synoniemen">Volgende</button>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

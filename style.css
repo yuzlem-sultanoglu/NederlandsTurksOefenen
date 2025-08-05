@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	max-width: 500px;
+	margin: 40px auto;
+	padding: 0 1rem;
+	box-sizing: border-box;
+}
+
+nav {
+	background-color: #189585;
+	padding: 10px 0;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+}
+/* Normale weergave */
+.menu button {
+	padding: 10px 20px;
+	font-size: 1em;
+	border: none;
+	border-radius: 8px;
+	background-color: #127266;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Bij het zweven met de muis */
+.menu button:hover {
+	background-color: #0e5a52;
+	transform: scale(1.05);
+}
+
+.menu button.active {
+	background-color: #ff8000;
+	transform: scale(1.1);
+}
+
+h1 {
+	text-align: center;
+	background-color: #408080;
+	color: #ffffff;
+	padding: 10px;
+}
+
+button.choice {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0.4rem 0;
+	padding: 0.6rem;
+	font-size: 1rem;
+	cursor: pointer;
+	border-style: double;
+	border-radius: 5px;
+	border-color: #000;
+	border-width: 2px;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+button.correct {
+	background-color: #00ff00;
+}
+
+button.incorrect {
+	background-color: #ff0000;
+}
+
+#question {
+	margin: 20px 0;
+	padding: 10px 15px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #000000;
+	border-style: dashed;
+	border-color: #ffff00;
+	font-size: 1.2rem;
+	background-color: #ffffff;
+}
+
+/* Algemene beschrijving van de flashcard */
+.flashcard {
+	width: 200px;
+	height: 120px;
+	margin: 0 auto;
+	cursor: pointer;
+	perspective: 1000px;
+	position: relative;
+	border-radius: 10px;
+	line-height: 120px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #127266;
+	color: white;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+	transition: box-shadow 0.3s ease;
+}
+/* Bij het zweven met de muis */
+
+.flashcard:hover {
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Algemene kaartstructuur voor inhoud */
+.card-inner {
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s;/*duur van de spin-animatie*/
+	transform-style: preserve-3d;/*Draai de voor- en achterkant van je kaart in 3D*/
+	position: relative;
+	text-align: center;
+}
+
+.flashcard.flipped .card-inner {
+	transform: rotateY(180deg);
+}
+
+
+.card-front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden; /*Verberg deze zijde wanneer de kaart wordt omgedraaid*/
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	background-color: #127266;
+	color: #ffffff;
+	border: 1px solid #ccc;
+}
+
+
+.card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	background-color: #f9f9f9;
+	color: #127266;
+	transform: rotateY(180deg); /*ondersteboven plaatsen*/
+}
+
+/* een vast kaartontwerp */
+.flashcard.static {
+	background-color: #d0f0e0;
+	cursor: default;
+	box-shadow: none;
+	line-height: normal;
+	color: #000000;
+	display: flex; justify-content : center; align-items : center;
+	text-align : center;
+	margin: 40px auto;
+	padding: 0 1rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+#next-word, #next-woorden, #next-synoniemen {
+	width: 90%;
+	max-width: 300px;
+	display: block;
+	margin: 20px auto 0 auto;
+	padding: 12px 0;
+	font-size: clamp(1rem, 4vw, 1.1rem);
+	border: none;
+	border-radius: 25px;
+	background-color: #2980b9;
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 4px 10px rgba(41, 128, 185, 0.4);
+	transition: background-color 0.3s ease;
+}
+
+#next-word:hover, #next-woorden:hover, #next-synoniemen-woorden:hover {
+	background-color: #1c5980;
+}
+
+
+.flashcard-container, .synoniem-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+/* Synoniemen*/
+.synonym-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.synonym {
+	background-color: #e0f7fa;
+	padding: 0.7rem 1.2rem;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 1.1rem;
+	color: #004d40;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.translation-card {
+	width: 200px;
+	height: 60px;
+	perspective: 1000px;
+	cursor: pointer;
+}
+
+.translation-card .card-front, .translation-card .card-back {
+	background-color: #ffffff;
+	border: 2px dashed #90caf9;
+	color: #000;
+}
+
+.translation-card .card-back {
+	background-color: #a5d6a7;
+	color: #1b5e20;
+}
+
+/* Responsieve instellingen/ media query */
+/*kleine scherminstellingen zoals tablets en telefoons*/
+@media ( max-width : 600px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+	#question {
+		font-size: 1rem;
+		padding: 8px 10px;
+	}
+	button.choice {
+		font-size: 0.9rem;
+		padding: 0.5rem;
+	}
+}
+
+@media ( max-width : 400px) {
+	body {
+		padding: 0 0.5rem;
+	}
+	button.choice {
+		font-size: 0.85rem;
+		padding: 0.4rem;
+	}
+	.flashcard {
+		height: 120px;
+		line-height: 120px;
+	}
+	#next-word, #next-woorden, #next-synoniemen-woorden {
+		display: block;
+		margin: 20px auto 0 auto;
+		padding: 10px 20px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
