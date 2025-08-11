@@ -2,7 +2,6 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff)](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff)](https://developer.mozilla.org/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](https://developer.mozilla.org/docs/Web/JavaScript)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 **Learn Dutch and Turkish the fun way!**  
 An interactive web app with flashcards, quizzes, opposites, and synonyms — all in one place.  
@@ -47,9 +46,6 @@ Project Structure
 ## 🖼️ Screenshot
 
 <img width="827" height="601" alt="screenshot" src="https://github.com/user-attachments/assets/3c668135-0550-491c-8a5e-14876ca342d7" />
-
-
-![App Preview](screenshot.png)
 
 ---
 
