@@ -25,13 +25,6 @@ https://yuzlem-sultanoglu.github.io/NederlandsTurksOefenen/
 
 ---
 
-Project Structure
-├── index.html     # Main layout and navigation
-├── style.css      # Visual styling & responsiveness
-└── script.js      # Logic: quiz, flashcards, toggling sections
-
----
-
 ## ✨ Features
 
 ✅ **New Words Mode** – Flip flashcards to learn Dutch–Turkish vocabulary.  
